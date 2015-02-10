@@ -17,7 +17,6 @@
     </licenses>
 
 
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <platform.version>4.4.2_r4</platform.version>
@@ -74,7 +73,7 @@
     <build>
 
         <sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
+
 
         <plugins>
 

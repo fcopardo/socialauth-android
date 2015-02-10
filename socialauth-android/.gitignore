@@ -1,1 +1,7 @@
 /build
+/target
+target/
+target
+/.idea
+/gen
+*.iml

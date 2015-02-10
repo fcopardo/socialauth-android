@@ -48,6 +48,7 @@ import android.webkit.CookieSyncManager;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import org.brickred.socialauth.*;
+import org.brickred.socialauth.android.models.SocialCredentials;
 import org.brickred.socialauth.exception.SocialAuthException;
 import org.brickred.socialauth.plugin.AlbumsPlugin;
 import org.brickred.socialauth.plugin.CareerPlugin;
@@ -561,6 +562,20 @@ public class SocialAuthAdapter {
 		authConfig.setId(provider.toString());
 		authConfig.setCustomPermissions(permissions);
 		authMap.put(provider.toString(), authConfig);
+	}
+
+	/**
+	 * Method to add user defined configuration. Please delete
+	 * oauth_consumers.properties before using this method.
+	 * @param credentials a wrapper for the Provider, secret and api values.
+	 * @param permissions permissions for provider
+	 * @throws Exception
+	 */
+	public void addConfig(SocialCredentials credentials, String permissions) throws Exception {
+		OAuthConfig authConfig = new OAuthConfig(credentials.getKey(), credentials.getSecret());
+		authConfig.setId(credentials.getProvider().toString());
+		authConfig.setCustomPermissions(permissions);
+		authMap.put(credentials.getProvider().toString(), authConfig);
 	}
 
 	/**
